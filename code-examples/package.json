@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "@types/node": "13.1.7",
+    "handlebars": "4.7.2",
+    "typescript": "3.7.4"
+  },
+  "devDependencies": {
+    "@ffflorian/prettier-config": "0.0.6",
+    "prettier": "1.19.1",
+    "ts-node": "8.6.2"
+  },
+  "engines": {
+    "node": ">= 12.4.0"
+  },
+  "license": "GPL-3.0",
+  "main": "index.js",
+  "name": "code-generation",
+  "prettier": "@ffflorian/prettier-config",
+  "private": true,
+  "scripts": {
+    "fix": "yarn prettier --write",
+    "prettier": "prettier \"src/*.{json,ts}\"",
+    "start:ast": "ts-node src/generate-from-ast.ts",
+    "start:hbs": "ts-node src/build-with-handlebars.ts",
+    "start:ts": "ts-node src/build-with-ts.ts",
+    "test": "yarn prettier --list-different && tsc --noEmit"
+  },
+  "version": "1.0.0"
+}

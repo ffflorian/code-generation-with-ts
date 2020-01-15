@@ -1,0 +1,67 @@
+{
+  "basePath": "/",
+  "definitions": {
+    "Pet": {
+      "properties": {
+        "food": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "name"],
+      "type": "object"
+    },
+    "Home": {
+      "properties": {
+        "costs": {
+          "type": "number"
+        },
+        "rooms": {
+          "type": "number"
+        },
+        "id": {
+          "type": "number"
+        }
+      },
+      "required": ["id", "name"],
+      "type": "object"
+    }
+  },
+  "info": {
+    "description": "This is a sample server Petstore server.",
+    "title": "Swagger Petstore",
+    "version": "1.0.3"
+  },
+  "paths": {
+    "/pet/{petId}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "ID of pet to return",
+            "in": "path",
+            "name": "petId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Pet"
+            }
+          }
+        }
+      }
+    }
+  },
+  "schemes": ["https"],
+  "swagger": "2.0",
+  "tags": []
+}
